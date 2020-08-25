@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: basicapp
+  name: basicapp
+spec:
+  ports:
+    - name: port-9080
+      port: 9080
+      targetPort: 9080
+      protocol: TCP
+    - name: port-9443
+      port: 9443
+      targetPort: 9443
+      protocol: TCP
+    - name: port-9043
+      port: 9043
+      targetPort: 9043
+      protocol: TCP
+  selector:
+    app: basicapp

@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: basicapp
+  name: basicapp
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: basicapp
+  template:
+    metadata:
+      labels:
+        app: basicapp
+    spec:
+      containers:
+        - image: image-registry.openshift-image-registry.svc:5000/pipelines-tutorial/basicapp:latest
+          imagePullPolicy: Always
+          name: basicapp
+          ports:
+            - containerPort: 9080
+              protocol: TCP
+            - containerPort: 9443
+              protocol: TCP
+            - containerPort: 9043
+              protocol: TCP
+          
