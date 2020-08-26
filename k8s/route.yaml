@@ -6,8 +6,10 @@ metadata:
   name: basicapp
 spec:
   port:
-    targetPort: port-9080
+    targetPort: port-9443
   to:
     kind: Service
     name: basicapp
     weight: 100
+  tls:
+    termination: passthrough
