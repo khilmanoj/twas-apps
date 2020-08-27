@@ -20,7 +20,7 @@ spec:
         - image: image-registry.openshift-image-registry.svc:5000/pipelines-tutorial/basicapp:latest
           imagePullPolicy: Always
           name: basicapp
-          livenessProbe:
+          readinessProbe:
             httpGet:
               path: /TestServletWebProject/TestServlet
               port: 9443
