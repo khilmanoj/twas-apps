@@ -5,14 +5,14 @@ metadata:
     app: basicapp
   name: basicapp
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       app: basicapp
   template:
     metadata:
       annotations:
-        version: v1.3
+        version: v1.4
       labels:
         app: basicapp
     spec:
@@ -20,6 +20,12 @@ spec:
         - image: image-registry.openshift-image-registry.svc:5000/pipelines-tutorial/basicapp:latest
           imagePullPolicy: Always
           name: basicapp
+          livenessProbe:
+            httpGet:
+              path: /TestServletWebProject/TestServlet
+              port: 9443
+            initialDelaySeconds: 3
+            periodSeconds: 3
           volumeMounts:
             - name: wsadmin-password
               mountPath: /tmp
