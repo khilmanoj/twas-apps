@@ -2,7 +2,7 @@
 FROM image-registry.openshift-image-registry.svc:5000/pipelines-tutorial/was855:latest
 # copy property files and jython scripts, using the flag `--chown=was:root` to set the appropriate permission
 
-#Either copy the secret password using below copy file or use the secret kind in the openshift secret.yaml file
+#Either copy the secret password using below copy file or use the oc create secret in openshift
 #COPY --chown=was:0 basicapp/password/adminpassword /tmp/PASSWORD
 COPY --chown=was:0 basicapp/work/app/TestTWASAppWeb.war /work/app/TestTWASAppWeb.war
 COPY --chown=was:0 basicapp/work/config/appinstall.py /work/config/appinstall.py
