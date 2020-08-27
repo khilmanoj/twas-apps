@@ -21,7 +21,7 @@ spec:
           name: basicapp
           volumeMounts:
             - name: wsadmin-password
-              mountPath: /tmp/PASSWORD
+              mountPath: /tmp
               readOnly: true
           ports:
             - containerPort: 9080
