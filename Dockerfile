@@ -1,5 +1,5 @@
 #FROM ibmcom/websphere-traditional:8.5.5.17
-FROM image-registry.openshift-image-registry.svc:5000/pipelines-tutorial/WAS855:latest
+FROM image-registry.openshift-image-registry.svc:5000/pipelines-tutorial/was855:latest
 # copy property files and jython scripts, using the flag `--chown=was:root` to set the appropriate permission
 COPY --chown=was:0 basicapp/password/adminpassword /tmp/PASSWORD
 COPY --chown=was:0 basicapp/work/app/TestTWASAppWeb.war /work/app/TestTWASAppWeb.war
