@@ -19,6 +19,10 @@ spec:
         - image: image-registry.openshift-image-registry.svc:5000/pipelines-tutorial/basicapp:latest
           imagePullPolicy: Always
           name: basicapp
+          volumeMounts:
+            - name: wsadmin-password
+              mountPath: /tmp/PASSWORD
+              readOnly: true
           ports:
             - containerPort: 9080
               protocol: TCP
@@ -26,4 +30,8 @@ spec:
               protocol: TCP
             - containerPort: 9043
               protocol: TCP
+      volumes:
+      - name: wsadmin-password
+        secret:
+          secretName: wsadmin-password        
           
