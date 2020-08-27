@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   labels:
     app: basicapp
-    version: v1.1
+    version: v1.2
   name: basicapp
 spec:
   replicas: 1
