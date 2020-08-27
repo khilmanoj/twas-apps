@@ -3,7 +3,6 @@ kind: Deployment
 metadata:
   labels:
     app: basicapp
-    version: v1.2
   name: basicapp
 spec:
   replicas: 1
@@ -14,6 +13,7 @@ spec:
     metadata:
       labels:
         app: basicapp
+        version: v1.3
     spec:
       containers:
         - image: image-registry.openshift-image-registry.svc:5000/pipelines-tutorial/basicapp:latest
