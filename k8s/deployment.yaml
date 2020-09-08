@@ -17,7 +17,7 @@ spec:
         app: basicapp
     spec:
       containers:
-        - image: image-registry.openshift-image-registry.svc:5000/pipelines-tutorial/basicapp:v1.0
+        - image: image-registry.openshift-image-registry.svc:5000/pipelines-tutorial/basicapp:latest
           imagePullPolicy: Always
           name: basicapp
           readinessProbe:
