@@ -12,12 +12,12 @@ spec:
   template:
     metadata:
       annotations:
-        version: v1.4
+        version: v1.0
       labels:
         app: basicapp
     spec:
       containers:
-        - image: image-registry.openshift-image-registry.svc:5000/pipelines-tutorial/basicapp:latest
+        - image: image-registry.openshift-image-registry.svc:5000/pipelines-tutorial/basicapp:v1.0
           imagePullPolicy: Always
           name: basicapp
           readinessProbe:
