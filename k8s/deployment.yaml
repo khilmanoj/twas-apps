@@ -12,7 +12,7 @@ spec:
   template:
     metadata:
       annotations:
-        version: v1.1.2
+        version: v1.0
       labels:
         app: basicapp
     spec:
